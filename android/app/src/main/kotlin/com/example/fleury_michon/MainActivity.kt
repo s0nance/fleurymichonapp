@@ -1,4 +1,4 @@
-package com.example.tinder_clone
+package com.example.fleury_michon
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

@@ -1,5 +1,5 @@
-name: tinder_clone
-description: A new Flutter project.
+name: fleury_michon
+description: An app based on Fleury Michon inter-school project.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -27,6 +27,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   flutter_tindercard: ^0.1.8
+  flutter_barcode_scanner: ^2.0.0
+  provider: ^6.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -60,9 +63,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Tinder_clone
+    - family: FleuryMichon
       fonts:
-        - asset: assets/fonts/Tinder_clone.ttf
+        - asset: assets/fonts/FleuryMichon.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

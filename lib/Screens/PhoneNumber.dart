@@ -1,96 +1,95 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tinder_clone/HomePage.dart';
+import 'package:fleury_michon/HomePage.dart';
 
 class PhoneNumberScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
-      appBar: new AppBar(
+      appBar: AppBar(
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
-        leading: new IconButton(icon: 
-        new Icon(Icons.arrow_back,color : Theme.of(context).primaryColor)
-        , onPressed: (){
-          Navigator.pop(context);
-        }),
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back, color: Theme.of(context).primaryColor),
+            onPressed: () {
+              Navigator.pop(context);
+            }),
         elevation: 0.0,
       ),
-      body: new Padding(
+      body: Padding(
         padding: EdgeInsets.only(
             left: ScreenUtil().setWidth(50.0),
             right: ScreenUtil().setWidth(50.0)),
-        child: new Column(
+        child: Column(
           children: <Widget>[
-            new Expanded(
+            Expanded(
                 flex: 5,
-                child: new Column(
+                child: Column(
                   children: <Widget>[
-                    new Align(
+                    Align(
                       alignment: Alignment.topLeft,
-                      child: new Text(
-                        "My number is",
-                        style: new TextStyle(
+                      child: Text(
+                        "Mon numéro :",
+                        style: TextStyle(
                             fontSize: ScreenUtil().setSp(100.0),
                             fontWeight: FontWeight.w600,
                             color: Colors.black54),
                       ),
                     ),
-                    new SizedBox(
-                      height: ScreenUtil().setHeight(80.0),
-                    ),
-                    new Row(
+                    SizedBox(height: ScreenUtil().setHeight(80.0)),
+                    Row(
                       children: <Widget>[
-                        new Expanded(
+                        Expanded(
                           flex: 3,
-                          child: new TextField(
+                          child: TextField(
                             keyboardType: TextInputType.number,
                             cursorColor: Theme.of(context).primaryColor,
-                            decoration: new InputDecoration(
-                                prefixIcon: new Icon(
+                            decoration: InputDecoration(
+                                prefixIcon: Icon(
                                   Icons.add,
                                   color: Colors.black,
                                 ),
-                                helperText: 'Country code'),
+                                helperText: 'Code pays'),
                           ),
                         ),
-                        new SizedBox(
-                          width: ScreenUtil().setWidth(20.0),
-                        ),
-                        new Expanded(
+                        SizedBox(width: ScreenUtil().setWidth(20.0)),
+                        Expanded(
                             flex: 7,
-                            child: new TextField(
+                            child: TextField(
                               keyboardType: TextInputType.number,
                               cursorColor: Theme.of(context).primaryColor,
-                              decoration: new InputDecoration(
-                                  helperText: 'Phone number'),
+                              decoration: InputDecoration(
+                                  helperText: 'Numéro de téléphone'),
                             )),
                       ],
                     ),
-                    new SizedBox(
+                    SizedBox(
                       height: ScreenUtil().setHeight(60.0),
                     ),
-                    new Text(
-                      'When you tap "Continue", FleuryMichon will send a text a with verification code. Message and data rates may apply.\nThe verified phone number can be used to log in. Learn what happens when your number changes.',
-                      style: new TextStyle(
+                    Text(
+                      'En cliquant sur "Continuer", FleuryMichon va vous envoyer un code de vérification. Des frais peuvent s\'appliquer.\nLe numéro vérifié pourra être utilisé pour se connecter.',
+                      style: TextStyle(
                           fontSize: ScreenUtil().setSp(37.0),
                           fontWeight: FontWeight.w500,
                           color: Colors.black54),
                     ),
-                    new SizedBox(
+                    SizedBox(
                       height: ScreenUtil().setHeight(40.0),
                     ),
-                    new GestureDetector(
+                    GestureDetector(
                       onTap: () {
                         Navigator.pop(context);
                         Navigator.pop(context);
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePage(0)));
                       },
-                      child: new Container(
-                        decoration: new BoxDecoration(
-                            borderRadius: new BorderRadius.circular(90.0),
-                            gradient: new LinearGradient(
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(90.0),
+                            gradient: LinearGradient(
                                 colors: [
                                   Theme.of(context).accentColor,
                                   Theme.of(context).secondaryHeaderColor,
@@ -102,9 +101,9 @@ class PhoneNumberScreen extends StatelessWidget {
                         width: double.infinity,
                         height: ScreenUtil().setHeight(110.0),
                         child: Center(
-                          child: new Text(
-                            "CONTINUE",
-                            style: new TextStyle(
+                          child: Text(
+                            "CONTINUER",
+                            style: TextStyle(
                                 color: Colors.white,
                                 letterSpacing: 1.2,
                                 fontWeight: FontWeight.w600,

@@ -10,98 +10,97 @@ class ProfileTab extends StatefulWidget {
 class _ProfileTabState extends State<ProfileTab> {
   @override
   Widget build(BuildContext context) {
-    return new Stack(
+    return Stack(
       children: <Widget>[
-        new Container(
+        Container(
           height: double.infinity,
           width: MediaQuery.of(context).size.width,
           color: Colors.grey.shade100,
         ),
-        new ClipPath(
+        ClipPath(
           clipBehavior: Clip.antiAlias,
-          clipper: new MyClipper(),
-          child: new Container(
+          clipper: MyClipper(),
+          child: Container(
             height: MediaQuery.of(context).size.height * 0.725,
-            decoration: new BoxDecoration(color: Colors.white, boxShadow: [
-              new BoxShadow(
+            decoration: BoxDecoration(color: Colors.white, boxShadow: [
+              BoxShadow(
                   color: Colors.grey,
-                  offset: new Offset(1.0, 10.0),
+                  offset: Offset(1.0, 10.0),
                   blurRadius: 10.0)
             ]),
-            child: new Column(
+            child: Column(
               children: <Widget>[
-                new Expanded(
+                Expanded(
                   flex: 4,
-                  child: new Container(
-                    child: new Column(
+                  child: Container(
+                    child: Column(
                       children: <Widget>[
-                        new SizedBox(height: ScreenUtil().setHeight(50.0)),
-                        new ClipRRect(
+                        SizedBox(height: ScreenUtil().setHeight(50.0)),
+                        ClipRRect(
                           borderRadius: BorderRadius.circular(500.0),
-                          child: new Image(
+                          child: Image(
                               fit: BoxFit.cover,
                               height: ScreenUtil().setHeight(350.0),
                               width: ScreenUtil().setWidth(430.0),
-                              image:
-                                  new AssetImage('assets/images/estelle.jpg')),
+                              image: AssetImage('assets/images/persona.png')),
                         ),
-                        new SizedBox(height: ScreenUtil().setHeight(10.0)),
-                        new Text(
-                          "Estelle, 22",
-                          style: new TextStyle(
+                        SizedBox(height: ScreenUtil().setHeight(10.0)),
+                        Text(
+                          "Sylvie, 22",
+                          style: TextStyle(
                               letterSpacing: 1.1,
                               fontSize: ScreenUtil().setSp(70),
                               fontWeight: FontWeight.w400),
                         ),
-                        new Expanded(
-                            child: new Row(
+                        Expanded(
+                            child: Row(
                           children: <Widget>[
-                            new Expanded(
-                              child: new Column(
+                            Expanded(
+                              child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: <Widget>[
-                                  new Container(
+                                  Container(
                                     width: ScreenUtil().setWidth(165.0),
                                     height: ScreenUtil().setHeight(140.0),
-                                    decoration: new BoxDecoration(
+                                    decoration: BoxDecoration(
                                         color: Colors.blueGrey.shade50,
                                         borderRadius:
                                             BorderRadius.circular(100.0)),
-                                    child: new Icon(
+                                    child: Icon(
                                       Icons.settings,
                                       size: ScreenUtil().setSp(100),
                                       color: Colors.blueGrey.shade200,
                                     ),
                                   ),
-                                  new SizedBox(
+                                  SizedBox(
                                       height: ScreenUtil().setHeight(10.0)),
-                                  new Text(
-                                    "SETTINGS",
-                                    style: new TextStyle(
+                                  Text(
+                                    "PARAMETRES",
+                                    style: TextStyle(
                                         color: Colors.blueGrey.shade200,
                                         fontWeight: FontWeight.w600),
                                   )
                                 ],
                               ),
                             ),
-                            new Expanded(
-                                child: new Stack(
+                            Expanded(
+                                child: Stack(
                               children: <Widget>[
-                                new Container(
+                                Container(
                                   color: Colors.white,
                                 ),
-                                new Positioned(
+                                Positioned(
                                   right: 1.0,
                                   bottom: 0.0,
                                   left: 1.0,
-                                  child: new Column(
+                                  child: Column(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: <Widget>[
-                                      new Container(
+                                      Container(
                                         width: ScreenUtil().setHeight(160),
                                         height: ScreenUtil().setHeight(160),
-                                        decoration: new BoxDecoration(
-                                            gradient: new LinearGradient(
+                                        decoration: BoxDecoration(
+                                            gradient: LinearGradient(
                                                 colors: [
                                                   Theme.of(context).accentColor,
                                                   Theme.of(context)
@@ -114,42 +113,42 @@ class _ProfileTabState extends State<ProfileTab> {
                                             color: Colors.green,
                                             borderRadius:
                                                 BorderRadius.circular(150.0)),
-                                        child: new Icon(
+                                        child: Icon(
                                           Icons.camera_alt,
                                           color: Colors.white,
                                           size: ScreenUtil().setSp(125.0),
                                         ),
                                       ),
-                                      new SizedBox(
+                                      SizedBox(
                                           height: ScreenUtil().setHeight(10.0)),
-                                      new Text(
-                                        "ADD MEDIA",
-                                        style: new TextStyle(
+                                      Text(
+                                        "AJOUTER PHOTO",
+                                        style: TextStyle(
                                             color: Colors.blueGrey.shade200,
                                             fontWeight: FontWeight.w600),
                                       )
                                     ],
                                   ),
                                 ),
-                                new Positioned(
+                                Positioned(
                                   right: ScreenUtil().setWidth(80.0),
                                   bottom: ScreenUtil().setWidth(62.0),
-                                  child: new Container(
+                                  child: Container(
                                     width: ScreenUtil().setHeight(50),
                                     height: ScreenUtil().setHeight(50),
-                                    decoration: new BoxDecoration(
+                                    decoration: BoxDecoration(
                                         boxShadow: [
-                                          new BoxShadow(
+                                          BoxShadow(
                                             color: Colors.grey,
-                                            offset: new Offset(2.0, 3.0),
+                                            offset: Offset(2.0, 3.0),
                                             blurRadius: 5.0,
                                           )
                                         ],
                                         color: Colors.white,
                                         borderRadius:
-                                            new BorderRadius.circular(25)),
+                                            BorderRadius.circular(25)),
                                     child: Center(
-                                      child: new Icon(
+                                      child: Icon(
                                         Icons.add,
                                         color: Theme.of(context).accentColor,
                                       ),
@@ -158,28 +157,28 @@ class _ProfileTabState extends State<ProfileTab> {
                                 )
                               ],
                             )),
-                            new Expanded(
-                              child: new Column(
+                            Expanded(
+                              child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: <Widget>[
-                                  new Container(
+                                  Container(
                                     width: ScreenUtil().setWidth(165.0),
                                     height: ScreenUtil().setHeight(140.0),
-                                    decoration: new BoxDecoration(
+                                    decoration: BoxDecoration(
                                         color: Colors.blueGrey.shade50,
                                         borderRadius:
                                             BorderRadius.circular(100.0)),
-                                    child: new Icon(
+                                    child: Icon(
                                       Icons.edit,
                                       size: ScreenUtil().setSp(100),
                                       color: Colors.blueGrey.shade200,
                                     ),
                                   ),
-                                  new SizedBox(
+                                  SizedBox(
                                       height: ScreenUtil().setHeight(10.0)),
-                                  new Text(
-                                    "EDIT INFO",
-                                    style: new TextStyle(
+                                  Text(
+                                    "MODIFIER",
+                                    style: TextStyle(
                                         color: Colors.blueGrey.shade200,
                                         fontWeight: FontWeight.w600),
                                   )
@@ -192,85 +191,17 @@ class _ProfileTabState extends State<ProfileTab> {
                     ),
                   ),
                 ),
-                new Expanded(flex: 3, child: new Container())
+                Expanded(flex: 3, child: Container())
               ],
             ),
           ),
         ),
-        /*new Positioned(
-            bottom: ScreenUtil().setHeight(80.0),
-            child: new Container(
-              height: ScreenUtil().setHeight(350),
-              width: MediaQuery.of(context).size.width,
-              child: new CarouselSlider(
-                height: ScreenUtil().setHeight(300),
-                aspectRatio: 16 / 2,
-                viewportFraction: 0.8,
-                enableInfiniteScroll: true,
-                autoPlayAnimationDuration: Duration(milliseconds: 800),
-                autoPlayInterval: Duration(seconds: 2),
-                autoPlayCurve: Curves.fastOutSlowIn,
-                autoPlay: true,
-                enlargeCenterPage: true,
-                pauseAutoPlayOnTouch: Duration(seconds: 5),
-                items: [0, 1, 2, 3, 4, 5].map((i) {
-                  return Builder(
-                    builder: (context) {
-                      return Container(
-                        width: ScreenUtil().setWidth(900.0),
-                        height: ScreenUtil().setHeight(180),
-                        margin: EdgeInsets.all(5.0),
-                        decoration: new BoxDecoration(
-                            color: Colors.white,
-                            border: new Border.all(
-                                color: Theme.of(context).primaryColor,
-                                width: 2),
-                            boxShadow: [
-                              new BoxShadow(
-                                  color: Colors.grey,
-                                  offset: new Offset(0.0, 5.0),
-                                  blurRadius: 10.0)
-                            ],
-                            borderRadius: BorderRadius.circular(10.0)),
-                        child: new Center(
-                            child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            new Text(
-                              quotes[i].heading,
-                              textAlign: TextAlign.center,
-                              style: new TextStyle(
-                                  fontSize: ScreenUtil().setSp(65.0),
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.black54),
-                            ),
-                            new SizedBox(
-                              height: ScreenUtil().setHeight(15.0),
-                            ),
-                            new Text(
-                              quotes[i].baseline,
-                              textAlign: TextAlign.center,
-                              style: new TextStyle(
-                                  fontSize: ScreenUtil().setSp(40.0),
-                                  fontWeight: FontWeight.w300,
-                                  color: Colors.black54),
-                            ),
-                          ],
-                        )),
-                      );
-                    },
-                  );
-                }).toList(),
-              ),
-            ))*/
       ],
     );
   }
 }
 
-final Shader linearGradient = new LinearGradient(
+final Shader linearGradient = LinearGradient(
         colors: [Colors.amber.shade800, Colors.amber.shade600],
         begin: Alignment.topRight,
         end: Alignment.bottomLeft,
@@ -281,9 +212,9 @@ final Shader linearGradient = new LinearGradient(
 class MyClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
-    Path p = new Path();
+    Path p = Path();
     p.lineTo(0, size.height - ScreenUtil().setHeight(200));
-    Offset controlPoint = new Offset(size.width / 2, size.height);
+    Offset controlPoint = Offset(size.width / 2, size.height);
     p.quadraticBezierTo(controlPoint.dx, controlPoint.dy, size.width,
         size.height - ScreenUtil().setHeight(200));
     //p.lineTo(size.width,size.height - ScreenUtil().setHeight(200) );
@@ -295,22 +226,3 @@ class MyClipper extends CustomClipper<Path> {
   @override
   bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }
-
-class Quotes {
-  final String heading;
-  final String baseline;
-
-  Quotes(this.heading, this.baseline);
-}
-
-List<Quotes> quotes = [
-  new Quotes("GET TINDER GOLD", "See who likes you & more!"),
-  new Quotes("Get matches faster", "Boost your profile once a month!"),
-  new Quotes(
-      "I meant to swipe right", "Get unlimited Rewinds with Tinder Plus!"),
-  new Quotes("Stand out with Super Likes",
-      "You're 3 times more likely to get a match!"),
-  new Quotes("Increase your chances", "Get unlimited likes with tinder Plus!"),
-  new Quotes(
-      "Swipe around the world!", "Passport to anywhere with Tinder Plus!"),
-];

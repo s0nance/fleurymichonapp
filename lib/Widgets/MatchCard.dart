@@ -1,26 +1,22 @@
-import 'package:fleury_michon/Models/Ingredients.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'dart:math' as math;
 
-class RecipeCard extends StatefulWidget {
+class MatchCard extends StatefulWidget {
   final String name;
   final String imageURL;
-  final String difficulty;
-  final String quantity;
-  final int prepTime;
-  final int cookTime;
-  final List<Ingredients> ingredients;
+  final int age;
+  final String bio;
 
-  RecipeCard(this.name, this.imageURL, this.difficulty, this.quantity,
-      this.prepTime, this.cookTime, this.ingredients);
+  MatchCard(@required this.name, @required this.imageURL, @required this.age,
+      @required this.bio);
 
   @override
-  _RecipeCardState createState() => _RecipeCardState();
+  _MatchCardState createState() => _MatchCardState();
 }
 
-class _RecipeCardState extends State<RecipeCard> {
+class _MatchCardState extends State<MatchCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -49,58 +45,57 @@ class _RecipeCardState extends State<RecipeCard> {
             width: MediaQuery.of(context).size.width - 10.0,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10.0),
-              child: Container(
-                color: Theme.of(context).primaryColor,
-                child: Image(
-                    fit: BoxFit.contain,
-                    alignment: Alignment.topCenter,
-                    image: AssetImage(widget.imageURL)),
-              ),
+              child: Image(
+                  fit: BoxFit.cover, image: AssetImage(widget.imageURL)),
             ),
           ),
           Positioned(
-            bottom: ScreenUtil().setHeight(100.0),
+            bottom: ScreenUtil().setHeight(40.0),
             left: ScreenUtil().setWidth(40.0),
-            width: ScreenUtil().setWidth(960),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(
-                  widget.name.toString(),
-                  style: TextStyle(
-                      shadows: [
-                        Shadow(
-                            color: Colors.black54,
-                            offset: Offset(1.0, 2.0),
-                            blurRadius: 10.0)
-                      ],
-                      color: Colors.white,
-                      fontSize: ScreenUtil().setSp(70.0),
-                      fontWeight: FontWeight.w800),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      widget.name,
+                      style: TextStyle(
+                          shadows: [
+                            Shadow(
+                                color: Colors.black54,
+                                offset: Offset(1.0, 2.0),
+                                blurRadius: 10.0)
+                          ],
+                          color: Colors.white,
+                          fontSize: ScreenUtil().setSp(95.0),
+                          fontWeight: FontWeight.w800),
+                    ),
+                    SizedBox(
+                      width: ScreenUtil().setWidth(40.0)
+                    ),
+                    Text(
+                      widget.age.toString(),
+                      style: TextStyle(
+                          shadows: [
+                            Shadow(
+                                color: Colors.black54,
+                                offset: Offset(1.0, 2.0),
+                                blurRadius: 10.0)
+                          ],
+                          color: Colors.white,
+                          fontSize: ScreenUtil().setSp(70.0),
+                          fontWeight: FontWeight.w300),
+                    ),
+                  ],
                 ),
                 SizedBox(
-                  width: ScreenUtil().setWidth(40.0),
+                  height: ScreenUtil().setHeight(10.0)
                 ),
                 Text(
-                  widget.difficulty.toString(),
-                  style: TextStyle(
-                      shadows: [
-                        Shadow(
-                            color: Colors.black54,
-                            offset: Offset(1.0, 2.0),
-                            blurRadius: 10.0)
-                      ],
-                      color: Colors.white,
-                      fontSize: ScreenUtil().setSp(70.0),
-                      fontWeight: FontWeight.w300),
-                ),
-                SizedBox(height: ScreenUtil().setHeight(10.0)),
-                Text(
-                  widget.quantity +
-                      " - " +
-                      (widget.prepTime + widget.cookTime).toString() +
-                      " minutes",
+                  widget.bio,
                   style: TextStyle(
                       color: Colors.white,
                       shadows: [
