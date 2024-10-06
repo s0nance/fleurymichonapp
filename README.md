@@ -105,14 +105,3 @@ Cette application, basé sur le principe du "match" à la manière de Tinder, vo
 Distribué sous la license MIT. Consultez `LICENSE.txt` pour plus d'information.
 
 <p align="right">(<a href="#top">Retour en haut</a>)</p>
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Marius Contoli & Jeremy Dumesny - marius.contoli-legay@epitech.eu - jeremy.dumesny@epitech.eu
-
-Lien du projet: [https://github.com/Epitech2021-2022/B-PRO-995-NCE-0-1-edhecepitech-marius.contoli-legay](https://github.com/Epitech2021-2022/B-PRO-995-NCE-0-1-edhecepitech-marius.contoli-legay)
-
-<p align="right">(<a href="#top">Retour en haut</a>)</p>
